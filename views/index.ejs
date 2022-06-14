@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <%- include ('partials/head') %>
+    </head>
+    <body class="container">
+        <%- include ('partials/header') %>
+
+        <% if (entries.length) { %>
+            <!-- angle brackets (<>) -->
+            <% entries.forEach(function(entry) { %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <%= entry.title %>
+                        <div class="pull-right">
+                            <%= entry.published %>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <%= entry.content %>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No existen entradas</p>
+        <% } %>
+    </body>
+</html>

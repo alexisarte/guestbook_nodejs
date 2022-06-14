@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <%- include ('partials/head') %>
+    </head>
+    <body class="container">
+        <%- include ('partials/header') %>
+        <!-- en telefonos moviles va a ocupar 8 columnas con un espaciado de dos -->
+        <div class="col-xs-8 col-xs-offset-2">
+            <h2 class="text-center">Write a new entry</h2>
+            <form action="new-entry" method="post">
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Entry a new Title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="body">Entry text</label>
+                    <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Post Entry" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
